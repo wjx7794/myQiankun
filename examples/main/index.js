@@ -4,6 +4,7 @@ import './index.less';
 /**
  * 主应用 **可以使用任意技术栈**
  * 以下分别是 React 和 Vue 的示例，可切换尝试
+ * 最终都导出了一个 render 函数，负责渲染主应用
  */
 import render from './render/ReactRender';
 // import render from './render/VueRender';
@@ -11,8 +12,10 @@ import render from './render/ReactRender';
 /**
  * Step1 初始化应用（可选）
  */
+// 初始化主应用，其实就是渲染主应用
 render({ loading: true });
 
+// 定义 loader 函数，切换微应用时由 qiankun 框架负责调用显示一个 loading 状态
 const loader = (loading) => render({ loading });
 
 /**
